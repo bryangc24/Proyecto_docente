@@ -2,11 +2,12 @@ import mongoose from 'mongoose';
 import log from '../config/winston';
 
 class MongooseOdm {
-    // Constructor de la clase
-    constructor(url) {
-      this.url = url;
-    }
-    // Metodo para conectar a la BD
+  // Class constructor
+  constructor(url) {
+    this.url = url;
+  }
+
+  // Metodo para conectar a la BD
   async connect() {
     try {
       // Estableciendo el sistema de promesas
@@ -17,10 +18,11 @@ class MongooseOdm {
       return connection;
     } catch (error) {
       log.error(
-        `🥀 No se pudo establecer conexión a la base de datos debido a: ${error.message} 🥀`,
+        `🥀 No se pudo establecer conexión a la base de datos debido a: ${error.message} 🥀`
       );
       return null;
     }
   }
-  }
-  export default MongooseOdm;
+}
+
+export default MongooseOdm;
