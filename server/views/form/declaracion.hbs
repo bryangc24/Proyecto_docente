@@ -1,0 +1,190 @@
+<h1 class="center black-text darken-1-text" 
+style="font-size: 30px;">
+   DECLARACIÓN DE INFORMACIÓN Y DOCUMENTACIÓN VERÍDICAFIRMA </h1>
+
+<div class="row"
+  style="margin: -2em; padding: 2em; border-radius: 1em;">
+    
+      <div class="card  grey lighten-2">
+        <div class="card-content white-text">
+          <span class="card-title black-text" ></span>
+          <p class="black-text" style="font-size: 19px;">DECLARO QUE LA INFORMACIÓN CONTENIDA EN LOSFORMATOS,
+             ASÍ COMO LA DOCUMENTACIÓN QUE SE ANEXA PARA PARTICIPAR EN EL PROCESO 
+            DE PROMOCIÓN DOCENTE 2023, SON FIDEDIGNOS Y NO TENDRÉ NINGÚN INCONVENIENTE EN QUE SEA VERIFICADA 
+            EN TODAS SUS PARTES, ENTERADO(A) DE QUE CUALQUIER ALTERACIÓN INVALIDA LA PROMOCIÓN QUE SOLICITO 
+            Y HACERME ACREEDOR(A) ALAS SANCIONES CORRESPONDIENTES.</p>
+        </div>
+        <br>
+      </div>
+        <br>
+      <table class="grey lighten-4">
+        <tbody>
+          <tr>
+            <td style="font-size: 20px;">
+                Nombre y Firma del Docente
+             <textarea id="textarea2" class="materialize-textarea" data-length="50"></textarea>
+            </td>
+            <td style="font-size: 20px;">
+             Fecha: 
+             <textarea id="textarea2" class="materialize-textarea" data-length="50"></textarea>
+            </td>
+          </tr>
+    </tbody>
+    </table>
+    <br>
+
+    <table class="grey lighten-4">
+        <thead>
+          <tr>
+              <th>Recibio Docmentacion Responsabe</th>
+              <th></th>
+              <th></th>
+          </tr>
+          
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>
+             Nombre (Responsabe):
+            </td>
+            <td></td>
+            <td>
+                <label>
+                  <span >
+                    <div class='input-field'>
+                      <input
+                        id='correo'
+                        name='nombre'
+                        type='text'
+                        class="validate"
+                        value="{{ project.name }}"
+                        required
+                        />
+                        <span 
+                        class="helper-text"
+                        data-error="Es necesario su Nombre con Apellidos completos"
+                        data-success="✅ Correcto"
+                        ></span>
+                        {{#if errorModel.nombre }}
+                        <span style="color: crimson;">Error: {{ errorModel.nombre }}</span>
+                         {{/if}}
+                      </div>
+                  </span>
+                  </label>
+            </td>
+          </tr>
+
+          <tr>
+             <td>
+             Cargo (Responsabe): 
+            </td>
+            <td></td>
+            <td>
+              <p>
+                <label>
+                  <span ><div class='input-field'>
+                      <input
+                        id='correo'
+                        name='nombre'
+                        type='text'
+                        class="validate"
+                        value="{{ project.name }}"
+                        required
+                        />
+                        <span 
+                        class="helper-text"
+                        data-error="Es necesario que Ingrese su Cargo"
+                        data-success="✅ Correcto"
+                        ></span>
+                        {{#if errorModel.nombre }}
+                        <span style="color: crimson;">Error: {{ errorModel.nombre }}</span>
+                         {{/if}}
+                      </div>
+                  </span>
+                  </label>
+                  </p>  
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+             Nombre del Centro de Trbajo:
+            </td>
+            <td></td>
+            <td>
+              <p>
+                <label>
+                  <span ><div class='input-field'>
+                      <input
+                        id='correo'
+                        name='nombre'
+                        type='text'
+                        class="validate"
+                        value="{{ project.name }}"
+                        required
+                        />
+                        <span 
+                        class="helper-text"
+                        data-error="Es necesario su Centro de Trabajo"
+                        data-success="✅ Correcto"
+                        ></span>
+                        {{#if errorModel.nombre }}
+                        <span style="color: crimson;">Error: {{ errorModel.nombre }}</span>
+                         {{/if}}
+                      </div>
+                  </span>
+                  </label>
+                  </p>  
+            </td>
+          </tr>
+
+           <tr>
+             <td>
+              Fecha de Rececpcion:
+            </td>
+            <td></td>
+            <td>
+              <p>
+                <label>
+                  <span >
+                   <input id="fecha" type="date" class="validate">
+                  </span>
+                  </label>
+                  </p>  
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+       <table class="grey lighten-4">
+        <tbody>
+          <tr>
+            <td class="center" style="font-size: 20px;">
+                Nombre y Firma del (Responsabe)
+             <div class='input-field'>
+                      <input
+                        id='correo'
+                        name='nombre'
+                        type='text'
+                        class="validate"
+                        value="{{ project.name }}"
+                        required
+                        />
+                        <span 
+                        class="helper-text"
+                        data-error="Es necesario su Nombre completo con su Firma"
+                        data-success="✅ Correcto"
+                        ></span>
+                        {{#if errorModel.nombre }}
+                        <span style="color: crimson;">Error: {{ errorModel.nombre }}</span>
+                         {{/if}}
+                      </div>
+            </td>
+          </tr>
+    </tbody>
+    </table>
+    <br>
+    <a  href="/form/act" class="grey lighten-4 btn-large black-text">Regresar</a>
+    <a  href="/esta/espera" class="grey lighten-4 btn-large black-text">Regresar</a>
+  </div>
