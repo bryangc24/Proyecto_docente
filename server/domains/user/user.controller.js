@@ -20,11 +20,11 @@ const register = (req, res) => {
 const addPost = (req, res) => {
   // Extrayendo la informacion
   // del formulario
-  const { nombre, apellidos } = req.body;
+  const { name, password } = req.body;
   // Regresando al cliente la información recabada
   res.status(200).json({
-    nombre,
-    apellidos,
+    name,
+    password,
   });
 };
 const lo = (req, res) => {
@@ -44,7 +44,7 @@ const lo = (req, res) => {
       workingPrev[`${curr.path}`] = curr.message;
       return workingPrev;
     }, {});
-    return res.status(422).render('user/lo', { project, errorModel });
+    return res.status(422).render('user/login', { project, errorModel });
   }
   // En caso de que pase la validación
   // Se desestructura la información
@@ -52,7 +52,7 @@ const lo = (req, res) => {
   const { validData: project } = req;
   // Se contesta la información
   // del proyecto al cliente
-  log.info('Se necesita un Corre');
+  log.info('Se necesita un Correo');
   return res.status(200).json(project);
 };
 // Controlador user

@@ -10,30 +10,11 @@ const userSchema = Yup.object().shape({
 // Creando el extractor de datos de la petición
 const getUser = (req) => {
   // Extrayendo datos de la petición
-  const {
-    correo,
-    password,
-    nombre,
-    fecha,
-    entd,
-    CURP,
-    RFC,
-    numero,
-    configpass,
-    apellidos,
-  } = req.body;
+  const { name, password } = req.body;
   // Regresando el objeto proyecto
   return {
-    correo,
+    name,
     password,
-    nombre,
-    fecha,
-    entd,
-    CURP,
-    RFC,
-    numero,
-    configpass,
-    apellidos,
   };
 };
 

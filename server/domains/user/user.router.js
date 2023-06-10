@@ -15,14 +15,14 @@ const router = new Router();
 // Enrutamos
 // GET '/user/login'
 router.get('/login', userController.login);
-
+// POST "/USER/LOGIN"
 router.post(
   '/login',
   ValidateFactory({
     schema: userValidator.userSchema,
     getObject: userValidator.getUser,
   }),
-  userController.lo
+  userController.login
 );
 
 // GET '/user/logout'

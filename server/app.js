@@ -1,9 +1,5 @@
 import createError from 'http-errors';
 
-// Creando variable del directorio raiz
-// eslint-disable-next-line
-global["__rootdir"] = path.resolve(process.cwd());
-
 // import the express library
 import express from 'express';
 
@@ -19,15 +15,15 @@ import morgan from 'morgan';
 // import apiRouter from '@server/routes/api';
 
 // Importando enrutador
-import router from './router';
 
 // Setting Webpack Modules
 
 import webpack from 'webpack';
 import WebpackDevmiddlegare from 'webpack-dev-middleware';
 import WebpackHotMiddleware from 'webpack-hot-middleware';
+import router from './router';
 
-//importando el onfigurador de mootor de plantillas 
+// importando el onfigurador de mootor de plantillas
 import configTemplateEngine from './config/templateEngine';
 
 // Importing webpack Configuration
@@ -36,6 +32,10 @@ import webpackConfig from '../webpack.dev.config';
 
 // Impornting winston logger
 import log from './config/winston';
+
+// Creando variable del directorio raiz
+// eslint-disable-next-line
+global["__rootdir"] = path.resolve(process.cwd());
 
 // We are creating the express instance
 const app = express();
@@ -74,13 +74,12 @@ if (nodeEnviroment === 'development') {
   console.log('👘 Ejecutando modo produccion');
 }
 
-
 // View Engine Setup
 configTemplateEngine(app);
 
-//Registering midlewares
-//Log all received requests
-app.use(morgan('combined', { stream : log.stream }));
+// Registering midlewares
+// Log all received requests
+app.use(morgan('combined', { stream: log.stream }));
 // Parse request data into jason
 app.use(express.json());
 // Decode url info
@@ -97,7 +96,6 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 router.addRoutes(app);
 
-
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   log.info(`404 Pagina no encontrada ${req.method} ${req.originalUrl}`);
@@ -105,7 +103,7 @@ app.use((req, res, next) => {
 });
 
 // error handler
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
