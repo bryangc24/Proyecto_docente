@@ -2,4 +2,3 @@
 const addRoutes = (app) => app;
 // Exportando objeto
 export default { addRoutes };
-
