@@ -17,13 +17,13 @@ const router = new Router();
 router.get('/login', userController.login);
 
 router.post(
-    '/login',
-    ValidateFactory({
-      schema: userValidator.userSchema,
-      getObject: userValidator.getUser,
-    }),
-    userController.lo,
-  );
+  '/login',
+  ValidateFactory({
+    schema: userValidator.userSchema,
+    getObject: userValidator.getUser,
+  }),
+  userController.lo
+);
 
 // GET '/user/logout'
 router.get('/logout', userController.logout);
@@ -31,4 +31,6 @@ router.get('/logout', userController.logout);
 // GET '/user/register'
 router.get('/register', userController.register);
 // Exporto este tramo de ruta
+// POST "/project/add"
+router.post('/register', userController.addPost);
 export default router;
